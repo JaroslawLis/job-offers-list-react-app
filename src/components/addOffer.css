@@ -1,0 +1,17 @@
+.add_firm {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #ddd;
+}
+
+.add_firm label {
+    margin: 10px 0;
+
+}
+
+.add_firm input,
+.add_firm textarea {
+    float: right;
+}
