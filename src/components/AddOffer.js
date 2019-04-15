@@ -6,7 +6,17 @@ import "./addOffer.css";
 //
 //
 class AddOffer extends Component {
-  state = { firm: "", address: "", phone: "", email: "", www: "", text: "" };
+  state = {
+    firm: "",
+    address: "",
+    phone: "",
+    email: "",
+    www: "",
+    jobAdvertisement: "",
+    jobAdvertisementLink: "",
+    queryDate: "",
+    CVDate: ""
+  };
 
   handleChange = e => {
     console.log(e.target.name);
@@ -22,14 +32,36 @@ class AddOffer extends Component {
   };
   handleSubmit = e => {
     e.preventDefault();
-    console.dir(this.state);
+    const data = { ...this.state };
+    // const {
+    //   firm,
+    //   address,
+    //   phone,
+    //   email,
+    //   www,
+    //   jobAdvertisement,
+    //   jobAdvertisementLink,
+    //   queryDate,
+    //   CVDate
+    // } = this.state;
+    console.log(data);
+    // const options = {
+    //   method: "POST",
+    //   body: JSON.stringify(data)
+    //   // headers: {
+    //   //   'Content-Type': 'application/json'
+    //   // }
+    // };
+    // fetch("./addOffer.php", options)
+    //   .then(response => response.json())
+    //   .then(json => console.log(json));
   };
 
   render() {
     return (
       <form className="add_firm" onSubmit={this.handleSubmit}>
         <label>
-          Podaj nazwę firmy
+          Podaj nazwę firmy{" "}
           <input
             name="firm"
             value={this.state.city}
@@ -37,9 +69,9 @@ class AddOffer extends Component {
             type="text"
             placeholder="Nazwa Firmy"
           />
-        </label>
+        </label>{" "}
         <label>
-          Podaj adres
+          Podaj adres{" "}
           <input
             name="address"
             value={this.state.address}
@@ -47,9 +79,9 @@ class AddOffer extends Component {
             type="text"
             placeholder="Adres"
           />
-        </label>
+        </label>{" "}
         <label>
-          Podaj telefon
+          Podaj telefon{" "}
           <input
             name="phone"
             value={this.state.phone}
@@ -57,9 +89,9 @@ class AddOffer extends Component {
             type="text"
             placeholder="Telefon"
           />
-        </label>
+        </label>{" "}
         <label>
-          Podaj e-mail
+          Podaj e - mail{" "}
           <input
             name="email"
             value={this.state.email}
@@ -67,36 +99,54 @@ class AddOffer extends Component {
             type="text"
             placeholder="email"
           />
-        </label>
+        </label>{" "}
         <label>
-          Podaj stronę www
+          Podaj stronę www{" "}
           <input
             name="www"
             value={this.state.www}
             onChange={this.handleChange}
             type="text"
             placeholder="Strona internetowa"
-          />
-        </label>
-        <label>
-          Podaj treść ogłoszenia
-          <textarea
-            name="text"
-            value={this.state.text}
-            onChange={this.handleChange}
           />
         </label>{" "}
         <label>
-          Podaj stronę www
+          Podaj treść ogłoszenia{" "}
+          <textarea
+            name="jobAdvertisement"
+            value={this.state.jobAdvertisement}
+            onChange={this.handleChange}
+          />{" "}
+        </label>{" "}
+        <label>
+          Podaj link do ogłoszenia{" "}
           <input
-            name="www"
-            value={this.state.www}
+            name="jobAdvertisementLink"
+            value={this.state.jobAdvertisementLink}
             onChange={this.handleChange}
             type="text"
             placeholder="Strona internetowa"
           />
-        </label>
-        <button type="submit">Dodaj firmę</button>
+        </label>{" "}
+        <label>
+          Data wysłania zapytania{" "}
+          <input
+            name="queryDate"
+            value={this.state.queryDate}
+            onChange={this.handleChange}
+            type="Date"
+          />
+        </label>{" "}
+        <label>
+          Data wysłania CV{" "}
+          <input
+            name="CVDate"
+            value={this.state.CVDate}
+            onChange={this.handleChange}
+            type="Date"
+          />
+        </label>{" "}
+        <button type="submit"> Dodaj firmę </button>{" "}
       </form>
     );
   }
