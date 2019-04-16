@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 import "./addOffer.css";
 
-//zapytanie
-//CV
-//
-//
 class AddOffer extends Component {
   state = {
     firm: "",
@@ -15,8 +11,11 @@ class AddOffer extends Component {
     jobAdvertisement: "",
     jobAdvertisementLink: "",
     queryDate: "",
-    CVDate: ""
+    CVDate: "",
+    notices: ""
   };
+
+  firmList = JSON.parse(localStorage.getItem("savedFirmList")) || [];
 
   handleChange = e => {
     console.log(e.target.name);
@@ -33,28 +32,22 @@ class AddOffer extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const data = { ...this.state };
-    // const {
-    //   firm,
-    //   address,
-    //   phone,
-    //   email,
-    //   www,
-    //   jobAdvertisement,
-    //   jobAdvertisementLink,
-    //   queryDate,
-    //   CVDate
-    // } = this.state;
-    console.log(data);
-    // const options = {
-    //   method: "POST",
-    //   body: JSON.stringify(data)
-    //   // headers: {
-    //   //   'Content-Type': 'application/json'
-    //   // }
-    // };
-    // fetch("./addOffer.php", options)
-    //   .then(response => response.json())
-    //   .then(json => console.log(json));
+    this.firmList.push(data);
+    console.log(this.firmList);
+    localStorage.setItem("savedFirmList", JSON.stringify(this.firmList));
+
+    this.setState({
+      firm: "",
+      address: "",
+      phone: "",
+      email: "",
+      www: "",
+      jobAdvertisement: "",
+      jobAdvertisementLink: "",
+      queryDate: "",
+      CVDate: "",
+      notices: ""
+    });
   };
 
   render() {
@@ -64,7 +57,7 @@ class AddOffer extends Component {
           Podaj nazwę firmy{" "}
           <input
             name="firm"
-            value={this.state.city}
+            value={this.state.firm}
             onChange={this.handleChange}
             type="text"
             placeholder="Nazwa Firmy"
@@ -145,6 +138,14 @@ class AddOffer extends Component {
             onChange={this.handleChange}
             type="Date"
           />
+        </label>
+        <label>
+          Uwagi
+          <textarea
+            name="notices"
+            value={this.state.notices}
+            onChange={this.handleChange}
+          />{" "}
         </label>{" "}
         <button type="submit"> Dodaj firmę </button>{" "}
       </form>
