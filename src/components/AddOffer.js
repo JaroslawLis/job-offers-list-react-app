@@ -2,18 +2,22 @@ import React, { Component } from "react";
 import "./addOffer.css";
 
 class AddOffer extends Component {
-  state = {
-    firm: "",
-    address: "",
-    phone: "",
-    email: "",
-    www: "",
-    jobAdvertisement: "",
-    jobAdvertisementLink: "",
-    queryDate: "",
-    CVDate: "",
-    notices: ""
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      firm: "",
+      address: "",
+      phone: "",
+      email: "",
+      www: "",
+      jobAdvertisement: "",
+      jobAdvertisementLink: "",
+      queryDate: "",
+      CVDate: "",
+      notices: ""
+    };
+  }
 
   firmList = JSON.parse(localStorage.getItem("savedFirmList")) || [];
 
@@ -32,9 +36,10 @@ class AddOffer extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const data = { ...this.state };
-    this.firmList.push(data);
-    console.log(this.firmList);
-    localStorage.setItem("savedFirmList", JSON.stringify(this.firmList));
+    this.props.writeFirm(data);
+    // this.firmList.push(data);
+    // console.log(this.firmList);
+    // localStorage.setItem("savedFirmList", JSON.stringify(this.firmList));
 
     this.setState({
       firm: "",
@@ -51,6 +56,7 @@ class AddOffer extends Component {
   };
 
   render() {
+    // console.log(this.props);
     return (
       <form className="add_firm" onSubmit={this.handleSubmit}>
         <label>
