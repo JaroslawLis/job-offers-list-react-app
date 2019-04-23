@@ -1,3 +1,6 @@
+# Aplikacja ma za zadanie zarządzać ofertami pracy w procesie poszukiwaniu pracy, stażu, praktyk
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
