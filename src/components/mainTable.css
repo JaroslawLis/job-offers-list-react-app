@@ -1,0 +1,49 @@
+.mainTable {
+    padding: 20px;
+    border: 2px solid black;
+    margin: 0 auto;
+
+}
+
+
+
+.row {
+    display: flex;
+    background-color: #d2d2d2;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.row div:nth-child(1) {
+    width: 20%;
+}
+
+.row div:nth-child(2) {
+    width: 20%;
+    overflow: hidden;
+}
+
+.row div:nth-child(3) {
+    width: 10%;
+    text-align: center;
+}
+
+.row div:nth-child(4) {
+    width: 10%;
+    text-align: center;
+}
+
+.row div:nth-child(5) {
+    width: 10%;
+    text-align: center;
+}
+
+.row div:nth-child(6) {
+    width: 10%;
+    text-align: center;
+}
+
+.row.title {
+    font-weight: 700;
+    text-align: center;
+}
