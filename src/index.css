@@ -1,7 +1,10 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #eeeeee;
+  /* background-color: #eeeeee; */
+  background-image: url("img/work-4156942.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
