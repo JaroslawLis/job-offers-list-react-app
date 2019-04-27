@@ -12,7 +12,15 @@ class MainTable extends Component {
   render() {
     console.log(this.props.data);
     const data = this.props.data.map((offer, i) => (
-      <div className="row" key={i}>
+      <div
+        className="row"
+        data-aos="flip-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-delay="500"
+        data-aos-once="true"
+        data-aos-offset="0"
+        key={i}
+      >
         <div>{offer.firm}</div>
         <div>
           <a href={offer.www} target="_blank">
