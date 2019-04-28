@@ -1,9 +1,15 @@
 .add_firm {
     display: flex;
+    color: #fff;
     flex-direction: column;
-    max-width: 400px;
+    max-width: 500px;
     padding: 20px;
-    background-color: #ddd;
+    /* background: #2d3b36; */
+    background: rgba(45, 59, 54, 0.85);
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: 5px;
+    background-clip: padding-box;
+
 }
 
 .add_firm label {
@@ -14,4 +20,68 @@
 .add_firm input,
 .add_firm textarea {
     float: right;
+    /* font-family: arial;
+    /* font-family: 'Merriweather'; */
+    /* background: rgba(255, 255, 255, 0.1);
+    border: 0;
+    border-radius: 8px;
+    font-size: 16px;
+    height: auto;
+    outline: 0;
+    padding: 5px; */
+    /* width: 100%; */
+    /* background-color: #e8eeef;
+    color: #8a97a0;
+    box-shadow: 0 1px rgba(0, 0, 0, 0.3) inset;
+    resize: none; */
+    border: 1px solid rgba(255, 255, 255, .4);
+    border-radius: 4px;
+    background-clip: padding-box;
+    display: block;
+    font-family: 'Source Sans Pro',
+        sans-serif;
+    font-size: 18px;
+    color: #fff;
+    padding: 2px 20px;
+
+    margin-bottom: 5px;
+    background: rgba(255, 255, 255, 0.4);
+
+
+
+}
+
+.add_firm input:focus,
+.add_firm textarea:focus {
+
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 5px 1px rgba(255, 255, 255, .5);
+    overflow: hidden;
+
+
+}
+
+.add_firm input:focus::placeholder {
+    color: rgba(255, 255, 255, .5);
+}
+
+.add_firm input::placeholder {
+    color: rgba(255, 255, 255, .7);
+}
+
+.add_firm button {
+
+    width: 90%;
+    height: 44px;
+    margin: 0 auto;
+    font-size: 1.15em;
+    border-radius: 4px;
+    border: 1px solid #253737;
+    background: #416b68;
+    padding: 10.5px 21px;
+    border-radius: 6px;
+    box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, inset rgba(255, 255, 255, 0.7) 0 1px 0;
+    text-shadow: #333333 0 1px 0;
+    color: #fff;
+
 }

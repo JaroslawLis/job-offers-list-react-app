@@ -1,8 +1,11 @@
-import React, { Component } from "react";
+import React, {
+  Component
+} from "react";
 
 import "./App.css";
 import AddOffer from "./components/AddOffer";
 import MainTable from "./components/MainTable";
+import Navigation from "./components/Navigation"
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -29,7 +32,9 @@ class App extends Component {
 
       firmList.splice(index, 1);
       localStorage.setItem("savedFirmList", JSON.stringify(firmList));
-      this.setState({ firmList });
+      this.setState({
+        firmList
+      });
     }
   };
 
@@ -38,7 +43,9 @@ class App extends Component {
     firmList.push(data);
 
     localStorage.setItem("savedFirmList", JSON.stringify(firmList));
-    this.setState({ firmList });
+    this.setState({
+      firmList
+    });
   };
 
   componentDidMount() {
@@ -48,17 +55,29 @@ class App extends Component {
   }
 
   render() {
-    return (
-      <div className="App">
-        <button onClick={this.handleButton}> Pokaż / Ukryj Formularz </button>{" "}
-        {this.state.formActive && <AddOffer writeFirm={this.writeFirm} />}
-        <MainTable
-          data={this.state.firmList}
-          handleRemoveButton={this.handleRemoveButton}
-        />{" "}
-      </div>
-    );
+    return ( <
+      div className = "App" >
+      <
+      Navigation / >
+      <
+      button onClick = {
+        this.handleButton
+      } > Pokaż / Ukryj Formularz < /button>{" "} {
+        this.state.formActive && < AddOffer writeFirm = {
+          this.writeFirm
+        }
+        />} <
+        MainTable
+        data = {
+          this.state.firmList
+        }
+        handleRemoveButton = {
+          this.handleRemoveButton
+        }
+        />{" "} <
+        /div>
+      );
+    }
   }
-}
 
-export default App;
+  export default App;
