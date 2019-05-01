@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "cc73cdad57d9a76cd068",
+    "revision": "01088a2fa201a973d8f0",
     "url": "/job-offers-list-react-app/static/css/main.66a0e7ae.chunk.css"
   },
   {
-    "revision": "cc73cdad57d9a76cd068",
-    "url": "/job-offers-list-react-app/static/js/main.f8ff646f.chunk.js"
+    "revision": "01088a2fa201a973d8f0",
+    "url": "/job-offers-list-react-app/static/js/main.b4776b54.chunk.js"
   },
   {
     "revision": "d05fce8916c94726e25f",
@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/job-offers-list-react-app/static/media/work-4156942.b8fa3ecb.png"
   },
   {
-    "revision": "1b3ff8d85da7a42380ecd28483bd4bf4",
+    "revision": "ddeeb67089fbfdc1fcb0d0c27739af25",
     "url": "/job-offers-list-react-app/index.html"
   }
 ];
