@@ -1,11 +1,9 @@
-import React, {
-  Component
-} from "react";
-
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import AddOffer from "./components/AddOffer";
 import MainTable from "./components/MainTable";
-import Navigation from "./components/Navigation"
+import Navigation from "./components/Navigation";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -22,7 +20,9 @@ class App extends Component {
       formActive: !this.state.formActive
     });
   };
-
+  handleEditButton = i => {
+    console.log(i);
+  };
   handleRemoveButton = index => {
     console.log("it working", index, this.state.firmList);
     const firm = this.state.firmList[index].firm;
@@ -55,29 +55,30 @@ class App extends Component {
   }
 
   render() {
-    return ( <
-      div className = "App" >
-      <
-      Navigation / >
-      <
-      button onClick = {
-        this.handleButton
-      } > Pokaż / Ukryj Formularz < /button>{" "} {
-        this.state.formActive && < AddOffer writeFirm = {
-          this.writeFirm
-        }
-        />} <
-        MainTable
-        data = {
-          this.state.firmList
-        }
-        handleRemoveButton = {
-          this.handleRemoveButton
-        }
-        />{" "} <
-        /div>
-      );
-    }
+    return (
+      <Router>
+        <div className="App">
+          <Navigation />
+          <Route
+            path="/"
+            exact
+            render={() => (
+              <MainTable
+                data={this.state.firmList}
+                handleRemoveButton={this.handleRemoveButton}
+                handleEditButton={this.handleEditButton}
+              />
+            )}
+          />
+          <Route
+            path="/add"
+            exact
+            render={() => <AddOffer writeFirm={this.writeFirm} />}
+          />
+        </div>
+      </Router>
+    );
   }
+}
 
-  export default App;
+export default App;

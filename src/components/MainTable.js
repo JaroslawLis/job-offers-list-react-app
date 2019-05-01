@@ -10,7 +10,6 @@ class MainTable extends Component {
   }
 
   render() {
-    console.log(this.props.data);
     const data = this.props.data.map((offer, i) => (
       <div
         className="row"
@@ -32,6 +31,9 @@ class MainTable extends Component {
         <div>{offer.CVDate}</div>
         <div>
           <button onClick={() => this.props.handleRemoveButton(i)}>Usuń</button>
+        </div>
+        <div>
+          <button onClick={() => this.props.handleEditButton(i)}>Edytuj</button>
         </div>
       </div>
     ));
