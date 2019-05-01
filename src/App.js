@@ -1,9 +1,15 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Redirect,
+  Switch
+} from "react-router-dom";
 import "./App.css";
 import AddOffer from "./components/AddOffer";
 import MainTable from "./components/MainTable";
 import Navigation from "./components/Navigation";
+import Edit from "./components/Edit";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -22,6 +28,12 @@ class App extends Component {
   };
   handleEditButton = i => {
     console.log(i);
+    return (
+      <Switch>
+        <Redirect from="/" to="/new-path" />
+        <Route path="/new-path" component={AddOffer} />
+      </Switch>
+    );
   };
   handleRemoveButton = index => {
     console.log("it working", index, this.state.firmList);
@@ -75,6 +87,7 @@ class App extends Component {
             exact
             render={() => <AddOffer writeFirm={this.writeFirm} />}
           />
+          <Route path="/edit/:id" component={Edit} />
         </div>
       </Router>
     );

@@ -1,5 +1,8 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import Edit from "./Edit";
 import "./mainTable.css";
+
 class MainTable extends Component {
   constructor(props) {
     super(props);
@@ -33,7 +36,9 @@ class MainTable extends Component {
           <button onClick={() => this.props.handleRemoveButton(i)}>Usuń</button>
         </div>
         <div>
-          <button onClick={() => this.props.handleEditButton(i)}>Edytuj</button>
+          {/* <button onClick={() => this.props.handleEditButton(i)}>Edytuj</button> */}
+
+          <Link to={`/edit/${i}`}>edycja</Link>
         </div>
       </div>
     ));
