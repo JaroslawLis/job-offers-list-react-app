@@ -11,6 +11,7 @@ import MainTable from "./components/MainTable";
 import Navigation from "./components/Navigation";
 import Edit from "./components/Edit";
 import Update from "./components/Update";
+import Stats from "./components/Stats";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -111,6 +112,11 @@ class App extends Component {
             render={props => (
               <Update {...props} state={this.state} editFirm={this.editFirm} />
             )}
+          />{" "}
+          <Route
+            path="/stats"
+            exact
+            render={props => <Stats {...props} state={this.state} />}
           />
         </div>
       </Router>
