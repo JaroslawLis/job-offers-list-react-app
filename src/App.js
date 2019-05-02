@@ -12,6 +12,7 @@ import Navigation from "./components/Navigation";
 import Edit from "./components/Edit";
 import Update from "./components/Update";
 import Stats from "./components/Stats";
+import Copy from "./components/Copy";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -83,41 +84,58 @@ class App extends Component {
       <Router>
         <div className="App">
           <Navigation />
-          <Route
-            path="/"
-            exact
-            render={() => (
-              <MainTable
-                data={this.state.firmList}
-                handleRemoveButton={this.handleRemoveButton}
-                handleEditButton={this.handleEditButton}
-              />
-            )}
-          />{" "}
-          <Route
-            path="/add"
-            exact
-            render={() => <AddOffer writeFirm={this.writeFirm} />}
-          />
-          <Route
-            path="/edit/:id"
-            exact
-            render={props => (
-              <Edit {...props} stateX={this.state} editFirm={this.editFirm} />
-            )}
-          />
-          <Route
-            path="/update/:id"
-            exact
-            render={props => (
-              <Update {...props} state={this.state} editFirm={this.editFirm} />
-            )}
-          />{" "}
-          <Route
-            path="/stats"
-            exact
-            render={props => <Stats {...props} state={this.state} />}
-          />
+          <Switch>
+            <Route
+              path="/"
+              exact
+              render={() => (
+                <MainTable
+                  data={this.state.firmList}
+                  handleRemoveButton={this.handleRemoveButton}
+                  handleEditButton={this.handleEditButton}
+                />
+              )}
+            />{" "}
+            <Route
+              path="/add"
+              exact
+              render={() => <AddOffer writeFirm={this.writeFirm} />}
+            />
+            <Route
+              path="/edit/:id"
+              exact
+              render={props => (
+                <Edit {...props} stateX={this.state} editFirm={this.editFirm} />
+              )}
+            />
+            <Route
+              path="/update/:id"
+              exact
+              render={props => (
+                <Update
+                  {...props}
+                  state={this.state}
+                  editFirm={this.editFirm}
+                />
+              )}
+            />{" "}
+            <Route
+              path="/stats"
+              exact
+              render={props => <Stats {...props} state={this.state} />}
+            />
+            <Route path="/kopia" component={Copy} />
+            <Route
+              path="/"
+              render={() => (
+                <MainTable
+                  data={this.state.firmList}
+                  handleRemoveButton={this.handleRemoveButton}
+                  handleEditButton={this.handleEditButton}
+                />
+              )}
+            />
+          </Switch>
         </div>
       </Router>
     );

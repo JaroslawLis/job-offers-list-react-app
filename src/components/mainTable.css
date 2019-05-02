@@ -12,9 +12,11 @@
 
 .row {
     display: flex;
-    background-color: #d2d2d2;
+    background-color: #e4dbcb;
     margin: 10px 0;
     padding: 10px;
+    border-radius: 5px;
+
 }
 
 .row div:nth-child(1) {
@@ -49,4 +51,41 @@
 .row.title {
     font-weight: 700;
     text-align: center;
+}
+
+.row button {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: #fff;
+    /* background-color: transparent; */
+    cursor: pointer;
+}
+
+.divAsButton,
+.row button {
+    background-color: #63613e;
+
+    margin: 0 5px;
+    border-radius: 5%;
+    border: 2px solid #63613e;
+    padding: 2px 5px;
+}
+
+.divAsButton:hover,
+.row button:hover {
+    background-color: #fff;
+    color: #63613e;
+
+}
+
+.divAsButton:hover a {
+    color: #63613e;
+}
+
+.divAsButton a {
+    display: block;
+    padding: 0 4px;
+    color: white;
+    text-decoration: none;
 }

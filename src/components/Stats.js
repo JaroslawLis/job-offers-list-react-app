@@ -21,9 +21,12 @@ class Stats extends Component {
 
     return (
       <div>
-        <h1>Wysłano {all_apl.length} aplikacji / zapytań </h1>
-        <h2>WO = {wo}%</h2>
-        <h2>WOE = {woe}%</h2>
+        <h1>
+          {" "}
+          Wysłano {all_apl.length}
+          aplikacji / zapytań{" "}
+        </h1>{" "}
+        <h2> WO = {wo ? wo : 0} % </h2> <h2> WOE = {woe ? woe : 0} % </h2>{" "}
       </div>
     );
   }

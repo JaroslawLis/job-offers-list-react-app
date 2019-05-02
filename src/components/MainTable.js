@@ -35,12 +35,10 @@ class MainTable extends Component {
         <div>
           <button onClick={() => this.props.handleRemoveButton(i)}>Usuń</button>
         </div>
-        <div>
-          {/* <button onClick={() => this.props.handleEditButton(i)}>Edytuj</button> */}
-
+        <div className="divAsButton">
           <Link to={`/edit/${i}`}>edycja</Link>
         </div>
-        <div>
+        <div className="divAsButton">
           <Link to={`/update/${i}`}>aktualizacja</Link>
         </div>
       </div>
