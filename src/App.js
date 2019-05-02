@@ -10,6 +10,7 @@ import AddOffer from "./components/AddOffer";
 import MainTable from "./components/MainTable";
 import Navigation from "./components/Navigation";
 import Edit from "./components/Edit";
+import Update from "./components/Update";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -31,7 +32,7 @@ class App extends Component {
     return (
       <Switch>
         <Redirect from="/" to="/new-path" />
-        <Route path="/new-path" component={AddOffer} />
+        <Route path="/new-path" component={AddOffer} />{" "}
       </Switch>
     );
   };
@@ -53,6 +54,16 @@ class App extends Component {
   writeFirm = data => {
     let firmList = [...this.state.firmList];
     firmList.push(data);
+
+    localStorage.setItem("savedFirmList", JSON.stringify(firmList));
+    this.setState({
+      firmList
+    });
+  };
+  editFirm = (data, index) => {
+    let firmList = [...this.state.firmList];
+
+    firmList.splice(index, 1, data);
 
     localStorage.setItem("savedFirmList", JSON.stringify(firmList));
     this.setState({
@@ -81,13 +92,26 @@ class App extends Component {
                 handleEditButton={this.handleEditButton}
               />
             )}
-          />
+          />{" "}
           <Route
             path="/add"
             exact
             render={() => <AddOffer writeFirm={this.writeFirm} />}
           />
-          <Route path="/edit/:id" component={Edit} />
+          <Route
+            path="/edit/:id"
+            exact
+            render={props => (
+              <Edit {...props} stateX={this.state} editFirm={this.editFirm} />
+            )}
+          />
+          <Route
+            path="/update/:id"
+            exact
+            render={props => (
+              <Update {...props} state={this.state} editFirm={this.editFirm} />
+            )}
+          />
         </div>
       </Router>
     );

@@ -25,7 +25,7 @@ class MainTable extends Component {
       >
         <div>{offer.firm}</div>
         <div>
-          <a href={offer.www} target="_blank">
+          <a href={offer.www} target="_blank" rel="noopener noreferrer">
             {offer.www}
           </a>
         </div>
@@ -39,6 +39,9 @@ class MainTable extends Component {
           {/* <button onClick={() => this.props.handleEditButton(i)}>Edytuj</button> */}
 
           <Link to={`/edit/${i}`}>edycja</Link>
+        </div>
+        <div>
+          <Link to={`/update/${i}`}>aktualizacja</Link>
         </div>
       </div>
     ));

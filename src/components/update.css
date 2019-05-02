@@ -1,4 +1,4 @@
-.add_firm {
+.update_firm {
     display: flex;
     color: #fff;
     flex-direction: column;
@@ -13,13 +13,13 @@
 
 }
 
-.add_firm label {
+.update_firm label {
     margin: 10px 0;
 
 }
 
-.add_firm input,
-.add_firm textarea {
+.update_firm input,
+.update_firm textarea {
     float: right;
     /* font-family: arial;
     /* font-family: 'Merriweather'; */
@@ -52,8 +52,8 @@
 
 }
 
-.add_firm input:focus,
-.add_firm textarea:focus {
+.update_firm input:focus,
+.update_firm textarea:focus {
 
     background-color: rgba(0, 0, 0, 0.2);
     box-shadow: 0 0 5px 1px rgba(255, 255, 255, .5);
@@ -62,15 +62,15 @@
 
 }
 
-.add_firm input:focus::placeholder {
+.update_firm input:focus::placeholder {
     color: rgba(255, 255, 255, .5);
 }
 
-.add_firm input::placeholder {
+.update_firm input::placeholder {
     color: rgba(255, 255, 255, .7);
 }
 
-.add_firm button {
+.update_firm button {
 
     width: 90%;
     height: 44px;
