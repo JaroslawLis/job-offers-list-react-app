@@ -17,6 +17,10 @@
     padding: 10px;
     border-radius: 5px;
 
+
+    align-items: baseline;
+
+
 }
 
 .row div:nth-child(1) {
@@ -26,6 +30,8 @@
 .row div:nth-child(2) {
     width: 20%;
     overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .row div:nth-child(3) {
@@ -88,4 +94,19 @@
     padding: 0 4px;
     color: white;
     text-decoration: none;
+}
+
+.showFirm {
+    border: 2px solid #63613e;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+}
+
+.showFirm a {
+    text-decoration: none;
+    color: #63613e;
+    line-height: 20px;
+    font-size: 2em;
 }

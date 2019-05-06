@@ -11,26 +11,32 @@ import MainTable from "./components/MainTable";
 import Navigation from "./components/Navigation";
 import Edit from "./components/Edit";
 import Update from "./components/Update";
+import ShowFirm from "./components/ShowFirm";
 import Stats from "./components/Stats";
 import Copy from "./components/Copy";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import templateData from "./components/templateData";
 
 class App extends Component {
   state = {
     formActive: false,
-    firmList: JSON.parse(localStorage.getItem("savedFirmList")) || []
+    firmList:
+      JSON.parse(localStorage.getItem("savedFirmList")) ||
+      JSON.parse(templateData)
   };
 
-  // firmList = JSON.parse(localStorage.getItem("savedFirmList")) || [];
+  handleCopy = () => {
+    let firmList = [...this.state.firmList];
 
+    localStorage.setItem("savedFirmListCopy", JSON.stringify(firmList));
+  };
   handleButton = () => {
     this.setState({
       formActive: !this.state.formActive
     });
   };
   handleEditButton = i => {
-    console.log(i);
     return (
       <Switch>
         <Redirect from="/" to="/new-path" />
@@ -39,9 +45,8 @@ class App extends Component {
     );
   };
   handleRemoveButton = index => {
-    console.log("it working", index, this.state.firmList);
     const firm = this.state.firmList[index].firm;
-    console.log(firm);
+
     if (window.confirm(`czy usunąć firmę \n${firm}`)) {
       let firmList = [...this.state.firmList];
 
@@ -118,13 +123,28 @@ class App extends Component {
                   editFirm={this.editFirm}
                 />
               )}
+            />
+            <Route
+              path="/showFirm/:id"
+              exact
+              render={props => (
+                <ShowFirm
+                  {...props}
+                  state={this.state}
+                  editFirm={this.editFirm}
+                />
+              )}
             />{" "}
             <Route
               path="/stats"
               exact
               render={props => <Stats {...props} state={this.state} />}
             />
-            <Route path="/kopia" component={Copy} />
+            <Route
+              path="/kopia"
+              exact
+              render={props => <Copy {...props} copyList={this.handleCopy} />}
+            />
             <Route
               path="/"
               render={() => (

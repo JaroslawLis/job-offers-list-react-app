@@ -1,11 +1,13 @@
-import React, { Component } from "react";
-const Copy = () => {
+import React from "react";
+
+const Copy = props => {
+  console.log(props);
   return (
     <div>
       <h1>
         {" "}
-        <button> Kopia </button>
-      </h1>
+        <button onClick={props.copyList}> Kopia </button>{" "}
+      </h1>{" "}
     </div>
   );
 };

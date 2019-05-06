@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Route } from "react-router-dom";
 import "./edit.css";
 class Edit extends Component {
   constructor(props) {

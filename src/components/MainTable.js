@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Edit from "./Edit";
 import "./mainTable.css";
 
 class MainTable extends Component {
@@ -40,6 +39,9 @@ class MainTable extends Component {
         </div>
         <div className="divAsButton">
           <Link to={`/update/${i}`}>aktualizacja</Link>
+        </div>
+        <div className="showFirm">
+          <Link to={`/showFirm/${i}`}>+</Link>
         </div>
       </div>
     ));
