@@ -1,13 +1,31 @@
 .showFirmInformation {
-    background-color: #fff;
-    border: 2px solid red;
+    background-color: #acaca4;
+
+    margin: 10px 0;
     padding: 20px;
 }
 
-.showFirmInformation pre {
-    background-color: #000;
+.showFirmInformation div:nth-child(odd) {
+    background-color: #6b7283;
+    padding: 5px 0 5px 20px;
+
     color: white;
+
+}
+
+.showFirmInformation div:nth-child(even) {
+    background-color: #b49d80;
+    padding: 7px 0 7px 20px;
+    border: 1px solid black;
+    font-weight: 700;
+}
+
+
+.showFirmInformation pre {
+    background-color: #272823;
+    color: #f6de00;
     width: 100%;
     overflow: scroll;
     padding: 10px;
+
 }
